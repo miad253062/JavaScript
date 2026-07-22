@@ -1,65 +1,167 @@
-const fruitsName = ["Banana", "Mango", "Papaya"];
-let _length = fruitsName.length;
-console.log(_length);
-
-let _add = fruitsName.push("Jackfruit", "Berry"); //reutrn length of the array
-console.log("adding", _add);
-console.log(fruitsName);
+//task 1
+const fruits = ["cherry", "mango", "banana"];
+console.log(fruits);
 
 
-let _popResult = fruitsName.pop();
-console.log("pop item:", _popResult); //return value of last removed item
-console.log(fruitsName);
+//task 2
+const fruitsLength = fruits.length;
+console.log(fruitsLength);
 
 
-let _shiftResult = fruitsName.shift();
-console.log("shift:", _shiftResult); //return value of first removed item
-console.log(fruitsName);
+//task 3
+console.log(fruits[0], fruits[2]);
 
 
-let _unshiftResult = fruitsName.unshift("Cutie");
-console.log("unshift:", _unshiftResult); //return array length;
-console.log(fruitsName)
-
-let _hasItem = fruitsName.includes("Mango") //return true or false;
-console.log(_hasItem);
+//task 4
+fruits[1] = "jackfruit";
+console.log(fruits);
 
 
-const moreFruits = ["Cherry", "Watermelon", "Melon"]
-const totalFruits = fruitsName.concat(moreFruits); //concating or combine two array or list;
-console.log("More fruits added:", totalFruits);
+//task 5
+fruits.push("berry");
+console.log(fruits);
 
 
-const _joinedFruits = moreFruits.join(" "); //join element 
-console.log(_joinedFruits);
+//task 6
+fruits.pop();
+console.log(fruits);
 
 
-let _position = moreFruits.indexOf("Melon"); //return index of given element, -1 if not
-console.log("The position of Melon:", _position);
+//task 7
+fruits.unshift("kiwi");
+console.log(fruits);
 
 
-let _isArray = Array.isArray(fruitsName); //return true or false, if a given name is array or not
-console.log("Is array:", _isArray);
+//task 8
+fruits.shift();
+console.log(fruits);
 
 
-console.log(fruitsName)
-let _sliceArray = fruitsName.slice(1, 3); //return a desire portion of array;
-console.log("Sliced array:", _sliceArray);
+//task 9
+const hasItem = fruits.includes("banana");
+console.log("Fruits contain banana?", hasItem);
 
 
-let _reverseArr = totalFruits.reverse(); //reverse the elements;
-console.log("reverse array:", _reverseArr);
+//task 10
+const itemIndex = fruits.indexOf("cherry");
+console.log("Index of cherry:", itemIndex);
 
-console.log("original arr:", totalFruits);
-const _spliceArr = totalFruits.splice(2, 2, "hello", "world"); //splice method change the original array and can add items
-console.log("After splicing:", _spliceArr);
-console.log("Modified arr:", totalFruits);
 
-for(let fruit in totalFruits) { //to find index of the elements
+//task 11
+for(fruit of fruits) {
     console.log(fruit);
 }
 
-for(let fruit of totalFruits) { // to find value of the elements
-    console.log(fruit);
+
+//task 12
+let count = 0;
+while(count < fruits.length){
+    console.log(fruits[count]);
+    count++;
 }
+
+
+//intermediate task 1
+const moreFruits = ["lemon", "watermelon", "melon"];
+const totalFruits = fruits.concat(moreFruits);
+console.log(totalFruits);
+
+//intermediate task 2
+const portionArr = totalFruits.slice(1, 3);
+console.log(portionArr);
+
+//intermediate task 3
+const joinArr = totalFruits.join(' ');
+console.log(joinArr);
+
+//intermediate task 4
+const humanName = "miad";
+console.log("humanName is an array?", Array.isArray(humanName));
+console.log("totalFruits is an array?", Array.isArray(totalFruits))
+
+//intermediate task 5
+const reversedArr = totalFruits.reverse();
+console.log("Reversed:", reversedArr);
+
+//intermediate task 6
+const sortArr = totalFruits.sort();
+console.log("sort array:", sortArr);
+
+//intermediate task 7
+
+
+//intermediate task 8
+const numbers = [20, 70, 23, 84, 10, 2, 5, 9];
+for(number of numbers) {
+    if(number > 10) {
+        console.log(number);
+    }
+}
+
+//intermediate task 9
+let sum = 0;
+for(number of numbers){
+    sum+=number;
+}
+
+console.log("Total sum:", sum);
+
+//advanced task 1
+const numberWithduplicate = [1, 2, 2, 6, 3, 6, 1];
+let uniqueArr = [];
+
+for(number of numberWithduplicate) {
+    if(!uniqueArr.includes(number)){
+        uniqueArr.push(number)
+    }
+}
+
+console.log("Unique number");
+for(number of uniqueArr) {
+    console.log(number)
+}
+
+//advanced task 2
+const mixedArr = [1, 4, "mango", "cutie", 8];
+let _stringArr = [];
+let _numberArr = [];
+
+for(item of mixedArr) {
+    if(typeof item === "number") {
+        _numberArr.push(item);
+    }else {
+        _stringArr.push(item);
+    }
+}
+
+console.log("number array:", _numberArr);
+console.log("string array:", _stringArr);
+
+//advanced task 3
+let maxValue = 0
+let minValue = numbers[0];
+for(number of numbers) {
+    if(maxValue < number){
+        maxValue = number;
+    }
+
+    if (minValue > number) {
+        minValue = number;
+    }
+}
+
+console.log(maxValue);
+console.log(minValue);
+
+//advanced task 4
+const _3dArray = [1, [2, 3], [4, [5, 6]]];
+const _1dArray = _3dArray.flat(Infinity);
+console.log(_1dArray);
+
+//advanced task 5
+const arr = [1, 2, 3, 4, 5];
+const first = arr.shift();
+arr.push(first);
+console.log(arr);
+
 
