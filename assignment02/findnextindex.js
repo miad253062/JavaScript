@@ -1,8 +1,3 @@
-// একটি word, একটি character, এবং একটি starting index দেওয়া হবে।
-// এরপর starting index-এর পরে ওই character আবার কোথায় আছে, তার index return করবে।
-// যদি আর না থাকে, তাহলে -1 return করবে।
-
-
 function findLongest(words){
     let longestWord = ''
     for(const word of words){
@@ -73,6 +68,7 @@ function findWord(words, target){
     let bestMatched = '';
     for(const word of words){
         let score = compareWord(mapString(word), targetmap)
+        console.log(`Score for ${word} is ${score}`);
         if(maxScore <= score){
             maxScore = score;
             bestMatched = word;
@@ -82,6 +78,5 @@ function findWord(words, target){
     return bestMatched;
 }
 
-const words = ['hello', 'javascript', 'how', 'are', 'java'];
-
+const words = ['hello', 'java', 'how', 'are', 'javaScript'];
 console.log(findWord(words, "java"));
