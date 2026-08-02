@@ -130,5 +130,3 @@ const calculateTotal = (items) => {
     }
     return `Total: ${total} Taka`;
 }
-
-console.log(calculateTotal([{price:80}]))
