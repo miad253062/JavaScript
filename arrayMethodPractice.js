@@ -98,3 +98,23 @@ const evenNumberUsingReduce = (numbers) => {
         return acc;
     }, [])
 }
+
+
+
+const getTopStudent = (students) => {
+    const avgMarks = students.map((student => ({name: student.name, avg: student.marks.reduce((acc, currentNumber) => {return acc+currentNumber}, 0)/student.marks.length})))
+    const bestStudent = avgMarks.reduce((best, student) => {return (best.avg > student.avg)? best: student})
+    return bestStudent;
+}
+
+
+
+
+const students = [
+  { name: "Rahim", marks: [80, 75, 90] },
+  { name: "Karim", marks: [60, 55, 70] },
+  { name: "Hasan", marks: [95, 90, 92] },
+  { name: "Sakib", marks: [40, 50, 45] }
+];
+
+console.log(getTopStudent(students))
